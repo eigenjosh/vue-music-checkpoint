@@ -19,8 +19,10 @@ var store = new vuex.Store({
       var url = '//bcw-getter.herokuapp.com/?url=';
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
       var apiUrl = url + encodeURIComponent(url2);
-      $.get(apiUrl).then(data=>{
-        commit('setResults', data)
+      $.get(apiUrl).then(data => {
+        data = JSON.parse(data)
+        console.log(data)
+        commit('setResults', data.results)
       })
     },
     getMyTunes({commit, dispatch}){
