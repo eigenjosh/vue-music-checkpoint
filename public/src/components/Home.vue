@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-      <form @submit.prevent="getMusicByArtist">
+  <div class="home container">
+      <form @submit.prevent="getMusicByArtist()">
         <input type="text" v-model="artist">
         <button type="submit">Search</button>
      </form>
@@ -24,6 +24,7 @@
     getMusicByArtist() {
       this.$store.dispatch('getMusicByArtist', this.artist)
       console.log(this.artist)
+      return this.artist
     }
   },
   computed: {
@@ -41,13 +42,14 @@
     display: inline-block;
     min-height: 500px;
     min-width: 50%;
-    background: green;
+    background: rgb(128, 2, 139);
   }
 
   .itunes {
     display: inline-block;
-    background: red;
+    background: rgb(255, 196, 0);
     min-height: 500px;
-    min-width: 45%;
+    min-width: 50%;
   }
+
 </style>

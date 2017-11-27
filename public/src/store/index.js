@@ -16,12 +16,11 @@ var store = new vuex.Store({
   },
   actions: {
     getMusicByArtist({commit, dispatch}, artist) {
-      var url = '//bcw-getter.herokuapp.com/?url=';
+      // var url = '//bcw-getter.herokuapp.com/?url=';
       var url2 = 'https://itunes.apple.com/search?term=' + artist;
-      var apiUrl = url + encodeURIComponent(url2);
-      $.get(apiUrl).then(data => {
+      // var apiUrl = url + encodeURIComponent(url2);
+      $.get(url2).then(data => {
         data = JSON.parse(data)
-        console.log(data)
         commit('setResults', data.results)
       })
     },

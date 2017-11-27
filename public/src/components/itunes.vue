@@ -1,8 +1,11 @@
 <template>
-    <form @submit.prevent="getSongs">
-        <input type="text" placeholder="Track Name">
-        <button @click="">Search</button>
-    </form>
+    <div>
+        <div v-for="result in results">
+            <h1>{{result.trackName}}</h1>
+            <img :src="result.artworkUrl100">
+            <audio class="audio" :src="result.previewUrl" controls="controls"></audio>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -11,6 +14,16 @@
         data() {
             return {
 
+            }
+        },
+        methods:{
+            getMusicByArtist(){
+                this.$store.dispatch('getMusicByArtist', this.artist)
+            }
+        },
+        computed:{
+            results(){
+                return this.$store.state.results
             }
         }
     }
