@@ -4,7 +4,6 @@
             <div class="col-m-8">
                 <h1>{{result.trackName}}</h1>
                 <img :src="result.artworkUrl100">
-                <router-link class="mytunes"></router-link>
                 <audio class="audio" :src="result.previewUrl" controls="controls"></audio>
             </div>
         </div>
@@ -24,6 +23,7 @@
                 this.$store.dispatch('getMusicByArtist', this.artist)
             },
             addToMyTunes(){
+                this.track = this.result
                 this.$store.dispatch('addToMyTunes', this.track)
             }
         },

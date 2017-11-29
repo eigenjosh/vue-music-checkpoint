@@ -6,7 +6,7 @@ vue.use(vuex)
 
 var store = new vuex.Store({
   state: {
-    myTunes: [],
+    mytunes: [],
     results: []
   },
   mutations: {
@@ -14,7 +14,7 @@ var store = new vuex.Store({
       state.results = results
     },
     setPlaylist(state, track) {
-      state.track = track
+      state.mytunes = mytunes
     }
   },
   actions: {
@@ -33,7 +33,7 @@ var store = new vuex.Store({
     addToMyTunes({ commit, dispatch }, track) {
       $.post('/mytunes').then(track => {
         track = data.results.trackName
-        commit('')
+        commit('setPlaylist', track)
       })
     },
     removeTrack({commit, dispatch}, track){

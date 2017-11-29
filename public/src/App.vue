@@ -21,7 +21,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .uesic{
     margin-right: 50%;
     color: rgb(49, 190, 129) !important;
