@@ -1,11 +1,13 @@
 <template>
   <div class="home container">
-      <form @submit.prevent="getMusicByArtist()">
-        <input type="text" v-model="artist">
-        <button type="submit">Search</button>
-     </form>
-    <mytunes class="my-tunes"></mytunes>
-    <itunes class="itunes"></itunes>
+    <form @submit.prevent="getMusicByArtist()">
+      <input type="text" v-model="artist" class="pull-left">
+      <button type="submit">Search</button>
+    </form>
+    <div class="row">
+      <itunes class="itunes col-xs-5 bg-success"></itunes>
+      <mytunes class="my-tunes col-xs-5 bg-info"></mytunes>
+    </div>
   </div>
 </template>
 
@@ -20,21 +22,21 @@
       }
     },
 
-  methods: {
-    getMusicByArtist() {
-      this.$store.dispatch('getMusicByArtist', this.artist)
-      console.log(this.artist)
-      return this.artist
+    methods: {
+      getMusicByArtist() {
+        this.$store.dispatch('getMusicByArtist', this.artist)
+        console.log(this.artist)
+        return this.artist
+      }
+    },
+    computed: {
+
+    },
+    components: {
+      mytunes,
+      itunes
     }
-  },
-  computed: {
-    
-  },
-  components:{
-    mytunes,
-    itunes
   }
-}
 </script>
 
 <style>
@@ -42,14 +44,11 @@
     display: inline-block;
     min-height: 500px;
     min-width: 50%;
-    background: rgb(128, 2, 139);
   }
 
   .itunes {
     display: inline-block;
-    background: rgb(255, 196, 0);
     min-height: 500px;
     min-width: 50%;
   }
-
 </style>

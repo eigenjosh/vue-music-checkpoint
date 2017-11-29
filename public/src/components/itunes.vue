@@ -1,9 +1,12 @@
 <template>
-    <div>
-        <div v-for="result in results">
-            <h1>{{result.trackName}}</h1>
-            <img :src="result.artworkUrl100">
-            <audio class="audio" :src="result.previewUrl" controls="controls"></audio>
+    <div class="container">
+        <div v-for="result in results" class="row">
+            <div class="col-m-8">
+                <h1>{{result.trackName}}</h1>
+                <img :src="result.artworkUrl100">
+                <button @click="addToMyTunes(track)">+</button>
+                <audio class="audio" :src="result.previewUrl" controls="controls"></audio>
+            </div>
         </div>
     </div>
 </template>

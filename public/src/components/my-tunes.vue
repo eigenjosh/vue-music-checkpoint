@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1 class="text-center">mytunes</h1>
+    <div class="container">
+        <h1 class="text-center">My Playlist</h1>
     </div>
 </template>
 
