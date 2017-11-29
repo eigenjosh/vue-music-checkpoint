@@ -1,6 +1,7 @@
 import vue from 'vue'
 import vuex from 'vuex'
 import $ from 'jquery'
+import router from '../router'
 
 vue.use(vuex)
 
