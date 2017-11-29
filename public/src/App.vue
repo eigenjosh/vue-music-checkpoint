@@ -24,7 +24,7 @@
 <style>
   .uesic{
     margin-right: 50%;
-    color: rgb(8, 219, 131) !important;
+    color: rgb(49, 190, 129) !important;
     text-shadow: 1px 1px 4px black; 
 
   }

@@ -12,6 +12,9 @@ var store = new vuex.Store({
   mutations: {
     setResults(state, results){
       state.results = results
+    },
+    setPlaylist(state, track) {
+      state.track = track
     }
   },
   actions: {
@@ -28,7 +31,10 @@ var store = new vuex.Store({
       //this should send a get request to your server to return the list of saved tunes
     },
     addToMyTunes({ commit, dispatch }, track) {
-      $.post(url2).then()
+      $.post('/mytunes').then(track => {
+        track = data.results.trackName
+        commit('')
+      })
     },
     removeTrack({commit, dispatch}, track){
       //Removes track from the database with delete
