@@ -27,8 +27,8 @@ var store = new vuex.Store({
     getMyTunes({commit, dispatch}){
       //this should send a get request to your server to return the list of saved tunes
     },
-    addToMyTunes({commit, dispatch}, track){
-      //this will post to your server adding a new track to your tunes
+    addToMyTunes({ commit, dispatch }, track) {
+      $.post(url2).then()
     },
     removeTrack({commit, dispatch}, track){
       //Removes track from the database with delete
